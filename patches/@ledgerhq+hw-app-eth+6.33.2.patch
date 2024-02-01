@@ -1,0 +1,65 @@
+diff --git a/node_modules/@ledgerhq/hw-app-eth/lib-es/modules/EIP712/EIP712.utils.js b/node_modules/@ledgerhq/hw-app-eth/lib-es/modules/EIP712/EIP712.utils.js
+index 4174323..2f02753 100644
+--- a/node_modules/@ledgerhq/hw-app-eth/lib-es/modules/EIP712/EIP712.utils.js
++++ b/node_modules/@ledgerhq/hw-app-eth/lib-es/modules/EIP712/EIP712.utils.js
+@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
+ import axios from "axios";
+ import SHA224 from "crypto-js/sha224";
+ import { hexBuffer, intAsHexBytes } from "../../utils";
+-import EIP712CAL from "@ledgerhq/cryptoassets/data/eip712";
++import EIP712CAL from "@ledgerhq/cryptoassets/lib/data/eip712";
+ import BigNumber from "bignumber.js";
+ const NULL_ADDRESS = "0x0000000000000000000000000000000000000000";
+ /**
+diff --git a/node_modules/@ledgerhq/hw-app-eth/lib-es/services/ledger/erc20.js b/node_modules/@ledgerhq/hw-app-eth/lib-es/services/ledger/erc20.js
+index dd39d0f..559ef52 100644
+--- a/node_modules/@ledgerhq/hw-app-eth/lib-es/services/ledger/erc20.js
++++ b/node_modules/@ledgerhq/hw-app-eth/lib-es/services/ledger/erc20.js
+@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
+ };
+ import axios from "axios";
+ import { log } from "@ledgerhq/logs";
+-import { signatures as signaturesByChainId } from "@ledgerhq/cryptoassets/data/evm/index";
++import { signatures as signaturesByChainId } from "@ledgerhq/cryptoassets/lib/data/evm/index";
+ import { getLoadConfig } from "./loadConfig";
+ const asContractAddress = (addr) => {
+     const a = addr.toLowerCase();
+diff --git a/node_modules/@ledgerhq/hw-app-eth/lib-es/services/ledger/index.js b/node_modules/@ledgerhq/hw-app-eth/lib-es/services/ledger/index.js
+index 9c2bf35..8b108b5 100644
+--- a/node_modules/@ledgerhq/hw-app-eth/lib-es/services/ledger/index.js
++++ b/node_modules/@ledgerhq/hw-app-eth/lib-es/services/ledger/index.js
+@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
+ // This implements the resolution of a Transaction using Ledger's own API
+ import { log } from "@ledgerhq/logs";
+ import { Interface } from "@ethersproject/abi";
+-import { signDomainResolution, signAddressResolution, } from "@ledgerhq/domain-service/signers/index";
++import { signDomainResolution, signAddressResolution, } from "@ledgerhq/domain-service/lib/signers/index";
+ import { byContractAddressAndChainId, findERC20SignaturesInfo } from "./erc20";
+ import { loadInfosForContractMethod } from "./contracts";
+ import { getNFTInfo, loadNftPlugin } from "./nfts";
+diff --git a/node_modules/@ledgerhq/hw-app-eth/lib/services/ledger/erc20.js b/node_modules/@ledgerhq/hw-app-eth/lib/services/ledger/erc20.js
+index 71b35e5..8727ed3 100644
+--- a/node_modules/@ledgerhq/hw-app-eth/lib/services/ledger/erc20.js
++++ b/node_modules/@ledgerhq/hw-app-eth/lib/services/ledger/erc20.js
+@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.byContractAddressAndChainId = exports.findERC20SignaturesInfo = void 0;
+ const axios_1 = __importDefault(require("axios"));
+ const logs_1 = require("@ledgerhq/logs");
+-const index_1 = require("@ledgerhq/cryptoassets/data/evm/index");
++const index_1 = require("@ledgerhq/cryptoassets/lib/data/evm/index");
+ const loadConfig_1 = require("./loadConfig");
+ const asContractAddress = (addr) => {
+     const a = addr.toLowerCase();
+diff --git a/node_modules/@ledgerhq/hw-app-eth/lib/services/ledger/index.js b/node_modules/@ledgerhq/hw-app-eth/lib/services/ledger/index.js
+index 27d39a8..f75841c 100644
+--- a/node_modules/@ledgerhq/hw-app-eth/lib/services/ledger/index.js
++++ b/node_modules/@ledgerhq/hw-app-eth/lib/services/ledger/index.js
+@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
+ // This implements the resolution of a Transaction using Ledger's own API
+ const logs_1 = require("@ledgerhq/logs");
+ const abi_1 = require("@ethersproject/abi");
+-const index_1 = require("@ledgerhq/domain-service/signers/index");
++const index_1 = require("@ledgerhq/domain-service/lib/signers/index");
+ const erc20_1 = require("./erc20");
+ const contracts_1 = require("./contracts");
+ const nfts_1 = require("./nfts");

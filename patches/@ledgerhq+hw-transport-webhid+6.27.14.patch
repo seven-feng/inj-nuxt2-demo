@@ -1,0 +1,13 @@
+diff --git a/node_modules/@ledgerhq/hw-transport-webhid/lib-es/TransportWebHID.js b/node_modules/@ledgerhq/hw-transport-webhid/lib-es/TransportWebHID.js
+index addac99..d83eb19 100644
+--- a/node_modules/@ledgerhq/hw-transport-webhid/lib-es/TransportWebHID.js
++++ b/node_modules/@ledgerhq/hw-transport-webhid/lib-es/TransportWebHID.js
+@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
+     });
+ };
+ import Transport from "@ledgerhq/hw-transport";
+-import hidFraming from "@ledgerhq/devices/hid-framing";
++import hidFraming from "@ledgerhq/devices/lib/hid-framing";
+ import { identifyUSBProductId, ledgerUSBVendorId } from "@ledgerhq/devices";
+ import { log } from "@ledgerhq/logs";
+ import { TransportOpenUserCancelled, DisconnectedDeviceDuringOperation, DisconnectedDevice, TransportError, } from "@ledgerhq/errors";
