@@ -65,13 +65,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend: (config) => {
-      config.resolve.alias['@ledgerhq/cryptoassets'] =
-        '@ledgerhq/cryptoassets/lib';
-      config.resolve.alias['@ledgerhq/devices'] = '@ledgerhq/devices/lib';
-      config.resolve.alias['@ledgerhq/domain-service'] =
-        '@ledgerhq/domain-service/lib';
-    },
+    // extend: (config) => {
+    //   config.resolve.alias['@ledgerhq/cryptoassets'] =
+    //     '@ledgerhq/cryptoassets/lib';
+    //   config.resolve.alias['@ledgerhq/devices'] = '@ledgerhq/devices/lib';
+    //   config.resolve.alias['@ledgerhq/domain-service'] =
+    //     '@ledgerhq/domain-service/lib';
+    // },
     transpile: [
       ({ isClient }) => isClient && '@injectivelabs',
       ({ isClient }) => isClient && '@ledgerhq',
